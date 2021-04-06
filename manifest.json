@@ -1,0 +1,25 @@
+{
+  "name": "Meet Animator",
+  "description": "Build an Extension!",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons": {
+    "16": "./icon.png",
+    "32": "./icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "css": [],
+      "js": ["lottie.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "https://meet.google.com/*"
+  ]
+}
