@@ -1,6 +1,6 @@
 {
   "name": "Meet Animator",
-  "description": "Build an Extension!",
+  "description": "Replace humdrum profile with Lottie Animation.",
   "version": "1.0",
   "manifest_version": 2,
   "icons": {
@@ -14,8 +14,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*/*"],
+      "matches": ["https://meet.google.com/*"],
       "css": [],
+      "run_at": "document_start",
       "js": ["lottie.js"]
     }
   ],
