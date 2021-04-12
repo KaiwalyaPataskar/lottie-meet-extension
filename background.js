@@ -1,7 +1,11 @@
 const loadForeground = (tab) => {
   chrome.tabs.get(tab.tabId, current_tab_info => {
     if (/^https:\/\/meet\.google/.test(current_tab_info.url)) {
-      chrome.tabs.executeScript(null, {file: './foreground.js', }, () => console.log("Injected!"));
+      chrome.scripting.executeScript(
+        {
+          file: './foreground.js'
+        }
+      );
     }
   })
 }
